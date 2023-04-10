@@ -1,0 +1,64 @@
+.categories-nav {
+  display: flex;
+  align-items: center;
+  gap: size(20, 10);
+
+  &__btn {
+    outline: 1px solid $silver-200;
+    border-radius: 5px;
+    font-size: size(20, 14);
+    padding: 13px 32px;
+    color: $darkblue;
+    white-space: nowrap;
+    transition: color 0.3s ease-in-out, outline-color 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+
+    &::before {
+      min-width: size(44, 20);
+      height: size(44, 20);
+      margin-right: 10px;
+    }
+
+    &:focus {
+      outline-color: rgba($orange-900, 0.7);
+      outline-width: 2px;
+    }
+
+    &:hover {
+      outline-color: rgba($orange-900, 0.7);
+      outline-width: 2px;
+      background-color: rgba($orange-900, 0.1);
+      color: $orange-900;
+
+      &::before {
+        background-color: $orange-900;
+      }
+    }
+
+    &:active {
+      outline-color: transparent;
+      background-color: $light;
+      color: $darkblue;
+      box-shadow: inset 0px -5px 12px rgba($orange-900, 0.2);
+
+      &::before {
+        background-color: $darkblue;
+      }
+    }
+
+    &.active {
+      background-color: $orange-900;
+      color: $light;
+
+      &::before {
+        background-color: $light;
+      }
+    }
+  }
+}
+
+.categories-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: size(30, 10);
+}

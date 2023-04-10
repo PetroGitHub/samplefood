@@ -1,0 +1,86 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: $light;
+  padding: 60px 0;
+  border-bottom: 3px solid transparent;
+  transition: padding 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+  &.sticky {
+    padding: 15px 0;
+    border-color: $orange-900;
+  }
+
+  &__burger-nav {
+    display: none;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: size(60, 25);
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__btn {
+    &:hover {
+
+      .btn-counter {
+        color: $orange-900 ;
+        background-color: $light ;
+      }
+    }
+
+    &:active {
+      .btn-counter {
+        color: $light;
+        background-color: $orange-900;
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-left: auto;
+
+    &__link-header {
+      font-size: 18px;
+      outline: 2px solid transparent;
+      border-radius: 5px;
+      letter-spacing: 0.01em;
+      transition: outline-color 0.3s ease-in-out, color 0.3s ease-in-out, text-shadow 0.5s ease-in-out;
+
+      &:focus {
+        outline-color: rgba($orange-900, 0.7);
+      }
+
+      &:hover {
+        color: $orange-900;
+      }
+
+      &:active {
+        text-shadow: 2px 2px 5px rgba($dark, 0.5);
+        outline-color: transparent;
+        color: $darkblue;
+      }
+    }
+
+    &__link--active {
+      color: $orange-900;
+    }
+  }
+}
+
+.burger-btn {
+  display: none;
+}

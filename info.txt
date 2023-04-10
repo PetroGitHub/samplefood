@@ -1,0 +1,25 @@
+Начало работы GULP:
+даем права root командой:
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+export PATH=~/.npm-global/bin:$PATH ### Add this to the end of the file ~/.profile
+source ~/.profile
+возобнавляем библиотеку установок GULP:
+ npm i
+Команды:
+gulp       - запускает он-лайн сервер и все html,css,js
+gulp build - удаляет папку  dist , создает images, создает папку dist
+gulp images - сжимает images  в папку dist/images
+
+
+Начало работы GitHub:
+git init
+git add .
+git status
+git commit -m 'catalog project progress'- обновляет изменения локально
+git branch -M main
+git remote add origin https://github.com/PetroGitHub/marcho.git
+git push -u origin main
+git branch dev
+git checkout dev
+git push origin dev  - отправляем на GitHub ветка dev.

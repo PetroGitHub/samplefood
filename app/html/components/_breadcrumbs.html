@@ -1,0 +1,23 @@
+<div class="breadcrumbs @className">
+  <div class="container">
+    <ul class="breadcrumbs__list">
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="../index.html">Главная</a>
+      </li>
+
+      @if (third) {
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="../catalog.html">Каталог товаров</a>
+      </li>
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link">@thirdPage</a>
+      </li>
+      }
+      @if (!third) {
+      <li class="breadcrumbs__item">
+        <a href="" class="breadcrumbs__link">Каталог товаров</a>
+      </li>
+      }
+    </ul>
+  </div>
+</div>

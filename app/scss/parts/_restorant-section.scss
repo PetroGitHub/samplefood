@@ -1,0 +1,103 @@
+.restorant__title {
+  margin-bottom: size(45, 30)
+}
+
+.restorant-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  &__item {
+    min-height: 419px;
+    height: 100%;
+    max-width: 370px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: 0px 3px 15px rgba(255, 104, 56, 0.5);
+    }
+  }
+
+  &__img {
+    object-fit: contain;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  &__order {
+    display: flex;
+    align-items: center;
+    gap: 103px;
+    padding: 0 20px;
+  }
+
+  &__time {
+    font-size: 18px;
+    font-weight: 300;
+    opacity: 0.9;
+    gap: 10px;
+
+    &:hover {
+      &:before {
+        background-color: $dark;
+      }
+    }
+  }
+
+  &__btn {
+    width: 79px;
+    height: 33px;
+    background-color: $orange-900;
+    border-radius: 20px;
+    outline: 2px solid $orange-900;
+    transition: background-color 0.3s ease-in-out, outline-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &::before {
+      width: 14px;
+      height: 12px;
+      background-color: $light;
+      mask-repeat: no-repeat;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:focus {
+      background-color: rgba($orange-900, 0.1);
+      color: $orange-900;
+      outline-color: rgba($orange-900, 0.7);
+
+      &::before {
+        background-color: $orange-900;
+      }
+    }
+
+    &:hover {
+      background-color: $light;
+      color: $orange-900;
+      outline-color: rgba($orange-900, 0.7);
+
+      &::before {
+        background-color: $orange-900;
+        transform: translateX(15px);
+      }
+    }
+
+    &:active {
+      background-color: rgba($orange-900, 0.1);
+      color: $orange-900;
+      outline-color: transparent;
+      box-shadow: none;
+
+      &::before {
+        background-color: $orange-900;
+        transform: translateX(0);
+      }
+    }
+  }
+}

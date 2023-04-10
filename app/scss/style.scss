@@ -1,0 +1,25 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'mixins';
+@import 'libs';
+@import 'global';
+
+@import 'parts/breadcrumbs';
+@import 'parts/header';
+@import 'parts/hero-section';
+@import 'parts/popular-section';
+@import 'parts/categories';
+@import 'parts/product-cards';
+@import 'parts/features-section';
+@import 'parts/restorant-section';
+@import 'parts/review-slider-section';
+@import 'parts/application-section';
+@import 'parts/discount';
+@import 'parts/catalog';
+@import 'parts/product-page';
+
+@import 'parts/footer';
+
+
+@import 'media';

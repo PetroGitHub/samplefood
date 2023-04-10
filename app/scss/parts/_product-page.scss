@@ -1,0 +1,322 @@
+.product-main {
+
+  &__breadcrumbs {
+    margin-bottom: size(60, 30);
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    margin-bottom: 30px;
+
+  }
+
+  &__info {
+    max-width: 530px;
+    width: 100%;
+  }
+
+  &__title {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  &__stars {
+    margin-bottom: 25px;
+  }
+
+  &__price {
+    color: $darkblue;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  //&__quantity {
+  //  display: flex;
+  //}
+
+  &__btn {
+    font-size: 14px;
+    display: flex;
+    gap: 15px;
+    transition: all 0.3s ease-in-out;
+
+    &::before {
+      background-color: $light;
+    }
+
+    &:hover::before {
+      background-color: $orange-900;
+    }
+
+    &:focus::before {
+      background-color: $orange-900;
+    }
+  }
+
+  //&__delivery {}
+
+  &__head-slider {
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
+
+
+
+    max-width: 610px;
+    width: 100%;
+    height: 510px;
+    background: $light;
+    outline: 1px solid $silver-200;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  &__btn--prev {
+    min-width: 19px;
+    height: 31px;
+    color: $darkblue;
+    position: absolute;
+    left: 45px;
+    top: 50%;
+    z-index: 1;
+  }
+
+  &__btn--next {
+    min-width: 19px;
+    height: 19px;
+    color: $darkblue;
+    position: absolute;
+    right: 45px;
+    top: 50%;
+  }
+}
+
+.stars {}
+
+.quantity {
+  display: flex;
+
+  &__btn {
+    width: 44px;
+    height: 44px;
+    background-color: $orange-900;
+    outline: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+
+
+    &::before {
+      background-color: $light;
+    }
+
+    &:focus {
+      background-color: rgba($orange-900, 0.1);
+      outline-color: rgba($orange-900, 0.7);
+
+      &::before {
+        background-color: $orange-900;
+      }
+    }
+
+    &:hover {
+      background-color: $light;
+      color: $orange-900;
+      outline-color: rgba($orange-900, 0.7);
+      box-shadow: 0px 5px 12px rgba($orange-900, 0.2);
+
+      &::before {
+        background-color: $orange-900;
+      }
+    }
+
+    &:active {
+      background-color: rgba($orange-900, 0.7);
+      color: $orange-900;
+
+      &::before {
+        background-color: $light;
+      }
+    }
+  }
+
+  &__btn--minus {
+    border-radius: 3px 0 0 3px;
+
+  }
+
+  &__input {
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    background-color: rgba($orange-900, 0.1);
+    width: 70px;
+    height: 44px;
+  }
+
+  &__btn--plus {
+    border-radius: 0 3px 3px 0;
+  }
+}
+
+.delivery {
+
+  &__title {
+    font-size: size(24, 18);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $silver-200;
+  }
+
+  &__list {
+    margin-bottom: size(20, 15);
+  }
+
+  &__item {
+    color: #505050;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+  }
+
+  &__link {}
+}
+
+.product-slider {
+
+
+  &__items {
+    text-align: -webkit-center;
+    margin-top: 50px;
+
+  }
+
+  &__img {
+    max-width: 400px;
+  }
+}
+
+.icon--left {}
+
+.icon--right {}
+
+.details {}
+
+.tabs {}
+
+.tab-nav {}
+
+.tabs-nav {
+
+  &__item {}
+
+  &__link {}
+}
+
+.tabs-content {
+
+  &__item {}
+}
+
+.description {}
+
+.characteristic {}
+
+.product-reviews {
+
+  &__title {}
+
+  &__items {}
+
+  &__item {}
+}
+
+.product-review {
+
+  &__head {}
+
+  &__img {}
+
+  &__info {}
+
+  &__name {}
+
+  &__time {}
+
+  &__stars {}
+
+  &__text {}
+}
+
+.product-feedback {
+
+  &__title {}
+}
+
+.feedback-form {
+
+  &__row {}
+
+  &__label {}
+
+  &__stars {}
+
+  &__inner {}
+
+  &__group {}
+
+  &__field {}
+
+  &__field--text {}
+
+  &__checkbox {}
+
+  &__btn {}
+}
+
+//.checkbox {
+
+//  &__input {}
+
+//  &__label {}
+//}
+
+.interest {
+
+  &__head {}
+
+  &__title {}
+
+  &__slider {}
+}
+
+.interest-slider {
+
+  &__item {}
+}
+
+//.product-card {
+
+//  &__link {}
+
+//  &__title {}
+
+//  &__img {}
+
+//  &__price {}
+
+//  &__currency {}
+
+//  &__btn {}
+//}
+
+//.btn--md {}

@@ -1,0 +1,300 @@
+@include('components/_head.html', {
+name: 'Чизбургер с листьями салата'
+})
+
+
+@include('components/_header.html')
+<main class="product-main">
+  @include('components/_breadcrumbs.html', {
+  className: 'product-main__breadcrumbs',
+  third: true,
+  thirdPage: 'Чизбургер с листьями салата'
+  })
+
+  <div class="container">
+    <section class="product-main__head">
+      <div class="product-main__info">
+        <h1 class="title product-main__title">Чизбургер с листьями салата</h1>
+        <div class="stars product-main__stars"></div>
+        <div class="product-main__price">160<span>грн.</span></div>
+        <div class="product-main__actions">
+          <div class="quantity product-main__quantity">
+            <button class="quantity__btn quantity__btn--minus icon icon--minus" type="button"></button>
+            <span class="sr-only">уменьшить колличество товаров</span>
+            <label class="sr-only" for="quantity">колличество товаров</label>
+            <input class="quantity__input" id="quantity" type="text" value="0" min="0" max="99" maxlength="2"
+              pattern="[0-9]*">
+            <button class="quantity__btn quantity__btn--plus icon icon--plus" type="button"></button>
+            <span class="sr-only">увеличить колличество товаров</span>
+          </div>
+          <button class="btn product-main__btn icon icon--cart" type="button">Добавить в корзину</button>
+        </div>
+        <div class="delivery product-main__delivery">
+          <h2 class="delivery__title">Доставка и оплата</h2>
+          <ul class="delivery__list">
+            <li class="delivery__item">Минимальная сумма заказа — 160 грн.</li>
+            <li class="delivery__item">Время доставки заказа — 80-140 мин.</li>
+            <li class="delivery__item">Оплата осуществляется только банковской картой.</li>
+            <li class="delivery__item">Окончательная сумма заказа формируется после сбора товаров.</li>
+          </ul>
+          <a href="#" class="more-link delivery__link">Подробнее</a>
+        </div>
+      </div>
+      <div class="product-main__head-slider">
+        <div class="product-slider__items">
+          <img src="images/big-burger.jpg" alt="Бургер" class="product-slider__img">
+        </div>
+        <div class="product-slider__items">
+          <img src="images/big-burger.jpg" alt="Бургер" class="product-slider__img">
+        </div>
+        <div class="product-slider__items">
+          <img src="images/big-burger.jpg" alt="Бургер" class="product-slider__img">
+        </div>
+      </div>
+    </section>
+
+    <section class="details">
+      <h2 class="sr-only">Дополнительное описание</h2>
+      <div class="tabs">
+        <ul class="tab-nav">
+          <li class="tabs-nav__item">
+            <a href="" class="tabs-nav__link">Описание</a>
+          </li>
+          <li class="tabs-nav__item">
+            <a href="" class="tabs-nav__link">Характеристики</a>
+          </li>
+          <li class="tabs-nav__item">
+            <a href="" class="tabs-nav__link">Отзывы <span>(2)</span></a>
+          </li>
+        </ul>
+        <ul class="tabs-content">
+          <li class="tabs-content__item">
+            <div class="description">
+              <p>Рубленый бифштекс из натуральной говядины на карамелизованной булочке, с ломтиком сыра «Чеддер»,
+                кетчупом, горчицей, луком и маринованными огурчиками.</p>
+              <p>Аллергены: Глютен, Молоко, Горчица, Может содержать сою, яйцо, следы кунжута</p>
+              <p>Внешний вид товара может отличаться от изображений, представленных на сайте.</p>
+            </div>
+          </li>
+          <li class="tabs-content__item">
+            <div class="characteristic">
+              <p>Диаметр:<span>20 см</span></p>
+              <p>Вес:<span>300 гр</span></p>
+              <p>Калорийность (на 100г):<span>295 ккал</span></p>
+              <p>Срок хранения:<span>до 3 дней</span></p>
+            </div>
+          </li>
+          <li class="tabs-content__item">
+
+            <div class="product-reviews">
+              <h3 class="product-reviews__title">Мнения наших клиентов</h3>
+              <ul class="product-reviews__items">
+                <li class="product-reviews__item">
+                  <figure class="product-review">
+                    <div class="product-review__head">
+                      <img class="product-review__img" src="../images/avatar-previews.png" width="70" height="70"
+                        alt="Аватар клиента">
+                      <figcaption class="product-review__info">
+                        <div class="product-review__name">Андрей</div>
+                        <time class="product-review__time" datetime="2021-06-10">10.06.2021</time>
+                      </figcaption>
+                      <div class="stars product-review__stars"></div>
+                    </div>
+                    <blockquote class="product-review__text">Доставили быстро. Товар свежий и очень вкусный, буду
+                      пробовать еще!</blockquote>
+                  </figure>
+                </li>
+                <li class="product-reviews__item">
+                  <figure class="product-review">
+                    <div class="product-review__head">
+                      <img class="product-review__img" src="../images/avatar-previews.png" width="70" height="70"
+                        alt="Аватар клиента">
+                      <figcaption class="product-review__info">
+                        <div class="product-review__name">Екатерина Белая</div>
+                        <time class="product-review__time" datetime="2021-06-10">07.06.2021</time>
+                      </figcaption>
+                      <div class="stars product-review__stars"></div>
+                    </div>
+                    <blockquote class="product-review__text">этот бургер неплохой чтобы перекусить, когда нет
+                      возможности или времени что-нибудь приготовить. Это отличный вариант, чтобы съесть на ходу, но
+                      чтобы побаловать себя, я больше предпочту пиццу</blockquote>
+                  </figure>
+                </li>
+              </ul>
+            </div>
+
+            <div class="product-feedback">
+              <h3 class="product-feedback__title">Оставить отзыв</h3>
+              <form class="feedback-form" action="">
+                <div class="feedback-form__row">
+                  <label class="feedback-form__label" for="">Ваша оценка *</label>
+                  <div class="stars feedback-form__stars"></div>
+                </div>
+
+                <div class="feedback-form__inner">
+                  <div class="feedback-form__group">
+                    <label class="feedback-form__label" for="feedback[text]">Ваш отзыв</label>
+                    <textarea class="feedback-form__field feedback-form__field--text" name="feedback[text]"
+                      id="feedback[text]" placeholder="Введите текст отзыва" cols="30" rows="10" required></textarea>
+                  </div>
+                  <div class="feedback-form__group">
+                    <label class="feedback-form__label" for="feedback[name]">Имя</label>
+                    <input class="feedback-form__field" type="text" name="feedback[name]" id="feedback[name]"
+                      placeholder="Введите ваше имя">
+                  </div>
+                  <div class="feedback-form__group">
+                    <label class="feedback-form__label" for="feedback[email]">Email</label>
+                    <input class="feedback-form__field" type="email" name="feedback[email]" id="feedback[email]"
+                      placeholder="youremail@mail.com" required>
+                  </div>
+                </div>
+
+                <div class="checkbox feedback-form__checkbox">
+                  <input class="checkbox__input sr-only" type="checkbox" id="feedback[save-data]"
+                    name="feedback[save-data]">
+                  <label class="checkbox__label" for="feedback[save-data]">Сохранить моё имя, email и адрес сайта в этом
+                    браузере для последующих моих комментариев.</label>
+                </div>
+                <button class="btn feedback-form__btn" type="submit">Оставить отзыв</button>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="interest">
+      <div class="interest__head">
+        <h2 class="title interest__title">Вас может заинтересовать</h2>
+      </div>
+
+      <ul class="interest-slider">
+        <li class="interest-slider__item">
+          <article class="product-card">
+            <a class="product-card__link" href="#">
+              <h3 class="product-card__title">
+                Чизбургер с листьями салата
+              </h3>
+            </a>
+            <a class="product-card__link" href="../product.html">
+              <img class="product-card__img" src="images/product/burger_1.png" width="140" height="140"
+                alt=" изображение Чизбургера с листьями салата">
+            </a>
+            <div class="product-card__price">
+              160 <span class="product-card__currency">грн.</span>
+            </div>
+            <button class="btn btn--md product-card__btn" type="button">Заказать</button>
+          </article>
+        </li>
+        <li class="interest-slider__item">
+          <article class="product-card">
+            <a class="product-card__link" href="#">
+              <h3 class="product-card__title">
+                Бифбургер</h3>
+            </a>
+            <a class="product-card__link" href="#">
+              <img class="product-card__img" src="images/product/burger_2.png" width="140" height="140"
+                alt=" изображение Бифбургера">
+            </a>
+            <div class="product-card__price">
+              190 <span class="product-card__currency">грн.</span>
+            </div>
+            <button class="btn btn--md product-card__btn" type="button">Заказать</button>
+          </article>
+        </li>
+        <li class="interest-slider__item">
+          <article class="product-card">
+            <a class="product-card__link" href="#">
+              <h3 class="product-card__title">
+                Королевский чизбургер
+              </h3>
+            </a>
+            <a class="product-card__link" href="#">
+              <img class="product-card__img" src="images/product/burger_3.png" width="140" height="140"
+                alt=" изображение Королевского чизбургера">
+            </a>
+            <div class="product-card__price">
+              260 <span class="product-card__currency">грн.</span>
+            </div>
+            <button class="btn btn--md product-card__btn" type="button">Заказать</button>
+          </article>
+        </li>
+        <li class="interest-slider__item">
+          <article class="product-card">
+            <a class="product-card__link" href="#">
+              <h3 class="product-card__title">
+                Черный гамбургер
+              </h3>
+            </a>
+            <a class="product-card__link" href="#">
+              <img class="product-card__img" src="images/product/burger_4.png" width="140" height="140"
+                alt=" изображение Черного гамбургера">
+            </a>
+            <div class="product-card__price">
+              199 <span class="product-card__currency">грн.</span>
+            </div>
+            <button class="btn btn--md product-card__btn" type="button">Заказать</button>
+          </article>
+        </li>
+        <li class="interest-slider__item">
+          <article class="product-card">
+            <a class="product-card__link" href="#">
+              <h3 class="product-card__title">
+                Чикен бургер
+              </h3>
+            </a>
+            <a class="product-card__link" href="#">
+              <img class="product-card__img" src="images/product/burger_5.png" width="140" height="140"
+                alt=" изображение Чикен бургера">
+            </a>
+            <div class="product-card__price">
+              180 <span class="product-card__currency">грн.</span>
+            </div>
+            <button class="btn btn--md product-card__btn" type="button">Заказать</button>
+          </article>
+        </li>
+        <li class="interest-slider__item">
+          <article class="product-card">
+            <a class="product-card__link" href="#">
+              <h3 class="product-card__title">
+                Чизбургер с листьями салата
+              </h3>
+            </a>
+            <a class="product-card__link" href="#">
+              <img class="product-card__img" src="images/product/burger_1.png" width="140" height="140"
+                alt=" изображение Чизбургера с листьями салата">
+            </a>
+            <div class="product-card__price">
+              160 <span class="product-card__currency">грн.</span>
+            </div>
+            <button class="btn btn--md product-card__btn" type="button">Заказать</button>
+          </article>
+        </li>
+        <li class="interest-slider__item">
+          <article class="product-card">
+            <a class="product-card__link" href="#">
+              <h3 class="product-card__title">
+                Бифбургер</h3>
+            </a>
+            <a class="product-card__link" href="#">
+              <img class="product-card__img" src="images/product/burger_2.png" width="140" height="140"
+                alt=" изображение Бифбургера">
+            </a>
+            <div class="product-card__price">
+              190 <span class="product-card__currency">грн.</span>
+            </div>
+            <button class="btn btn--md product-card__btn" type="button">Заказать</button>
+          </article>
+        </li>
+      </ul>
+
+
+
+
+    </section>
+  </div>
+
+</main>
+
+@include('components/_footer.html')
+@include('components/_scripts.html')

@@ -1,0 +1,121 @@
+.review-slider {
+  margin-bottom: 134px;
+
+  &__inner {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-around;
+    gap: size(40, 20);
+    padding: 0 90px 46px;
+  }
+
+  &__image {
+    border-radius: 50%;
+    max-width: size(300, 100);
+    height: size(300, 100);
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 100px;
+  }
+}
+
+.quote {
+  max-width: 650px;
+  width: 100%;
+
+  &__text {
+    font-style: italic;
+    font-size: size(20, 14);
+    line-height: 1.5;
+    margin-bottom: size(30, 20);
+    padding: 0 40px;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 20px;
+      background-image: url('../images/sprite.svg#icon-quote-open');
+      background-repeat: no-repeat;
+      background-size: contain;
+      left: 0;
+      top: 0;
+      position: absolute;
+    }
+
+    &::after {
+      content: '';
+      width: 24px;
+      height: 20px;
+      background-image: url('../images/sprite.svg#icon-quote-close');
+      background-repeat: no-repeat;
+      background-size: contain;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: size(20, 16);
+    color: $orange-900;
+    padding: 0 40px;
+
+  }
+
+  &__name-descr {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: $dark;
+    padding-top: 15px;
+  }
+}
+
+.slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+  padding: 0;
+
+
+  & button {
+    font-size: 0;
+    width: 15px;
+    height: 15px;
+    background-color: $grey;
+    border-radius: 50%;
+  }
+
+  .slick-active {
+    & button {
+      background-color: $orange-900;
+    }
+  }
+}
+
+
+.slick-arrow {
+  position: absolute;
+  bottom: -10px;
+}
+
+.slick-prev {
+  right: 41%;
+  transform: translateX(20%);
+  z-index: 1;
+}
+
+.slick-next {
+  right: 59%;
+  transform: translateX(90%);
+  z-index: 1;
+
+}
+
+.slick-slide {
+  height: auto;
+}
