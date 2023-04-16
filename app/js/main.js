@@ -58,14 +58,6 @@ $(function () {
     nextArrow: '<button type="button" class="product-main__btn--next"><img src="images/icons/icon-right.svg" alt="arrow-right"></button>',
   });
 
-  $(".product-slider__items").data - fancybox({
-    speed: 330, //скорость появления окна
-    addClass: 'product-lightbox',
-    loop: true, //галерея зациклена
-    infobar: true, // показать/скрыть кнопки след/пред слайд
-    buttons: true, // показать/скрыть справа вверху кнопки закрыть, список миниатюр, на весь экран
-    baseClass: 'retro2', // класс всплывайки
-  });
 
   $('.review-slider__content').slick({
     dots: true,
