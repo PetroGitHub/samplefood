@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: row-reverse;
     gap: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 
   }
 
@@ -74,12 +74,13 @@
 
 
     max-width: 610px;
-    width: 100%;
-    height: 510px;
+    //width: 100%;
+    //height: 550px;
     background: $light;
     outline: 1px solid $silver-200;
     border-radius: 5px;
     position: relative;
+    overflow: hidden;
   }
 
   &__btn--prev {
@@ -88,17 +89,17 @@
     color: $darkblue;
     position: absolute;
     left: 45px;
-    top: 50%;
+    top: calc(50% - 30px);
     z-index: 1;
   }
 
   &__btn--next {
     min-width: 19px;
-    height: 19px;
+    height: 31px;
     color: $darkblue;
     position: absolute;
     right: 45px;
-    top: 50%;
+    top: calc(50% - 30px);
   }
 }
 
@@ -193,94 +194,223 @@
 
 .product-slider {
 
-
   &__items {
-    text-align: -webkit-center;
-    margin-top: 50px;
-
+    padding: size(75, 22) size(105, 22);
   }
 
   &__img {
-    max-width: 400px;
+    width: size(400, 300);
+    margin: 0 auto;
   }
 }
 
-.icon--left {}
+//.icon--left {}
 
-.icon--right {}
+//.icon--right {}
 
-.details {}
+.details {
+  padding-top: 30px;
+  border-top: 1px solid #E4E4E4;
+}
 
-.tabs {}
+.tabs {
+  max-width: 690px;
+  margin: 0 auto;
+}
 
-.tab-nav {}
+.tab-nav {
+
+  display: flex;
+  gap: size(60, 30);
+  margin-bottom: 30px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
 .tabs-nav {
 
   &__item {}
 
-  &__link {}
+  &__link {
+    font-size: size(24, 20);
+    line-height: 1.5;
+
+    &.active {
+      color: $orange-900;
+    }
+  }
+
+
 }
 
 .tabs-content {
+  font-size: 20px;
+  line-height: 1.5;
+  opacity: 0.9;
 
-  &__item {}
+  &__item {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
 }
 
-.description {}
+.description {
+  & p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
 
-.characteristic {}
+
+
+.characteristic {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.5;
+
+
+  & span {
+    font-weight: 400;
+    padding-left: 4px;
+  }
+}
 
 .product-reviews {
+  margin-bottom: 60px;
 
-  &__title {}
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: $darkblue;
+    letter-spacing: 0.03em;
+    margin-bottom: 30px;
+
+  }
 
   &__items {}
 
-  &__item {}
+  &__item {
+    &:not(:last-child) {
+      padding-bottom: 20px;
+      border-bottom: 1px solid $grey;
+      margin-bottom: 25px;
+    }
+  }
 }
 
 .product-review {
 
-  &__head {}
 
-  &__img {}
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+  }
+
+  &__img {
+    border-radius: 50%;
+  }
 
   &__info {}
 
-  &__name {}
+  &__name {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
 
-  &__time {}
+  &__time {
+    letter-spacing: 0.03em;
+    font-size: 18px;
+  }
 
-  &__stars {}
+  &__stars {
+    margin-left: auto;
+  }
 
-  &__text {}
+  &__text {
+    font-size: 20px;
+    line-height: 1.5;
+  }
 }
 
 .product-feedback {
 
-  &__title {}
+  &__title {
+    @extend .product-reviews__title;
+  }
 }
 
 .feedback-form {
 
-  &__row {}
+  &__row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
 
-  &__label {}
+  &__label {
+    line-height: 1.3;
 
-  &__stars {}
+    &+.feedback-form__field {
+      margin-top: 13px;
+    }
+  }
 
-  &__inner {}
 
-  &__group {}
+  &__inner {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 10px 30px;
+    margin-bottom: 30px;
+  }
 
-  &__field {}
+  &__group {
+    &:first-child {
+      grid-area: 1 / 1 / 3 / 2;
+    }
 
-  &__field--text {}
+  }
 
-  &__checkbox {}
+  &__field {
+    width: 100%;
+    padding: 18px;
+    font-size: 16px;
+    line-height: 1.3;
+    border: 1px solid $grey;
+    border-radius: 5px;
+    outline: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      outline-color: $orange-900;
+      border-color: $orange-900;
+    }
+  }
+
+  &__field--text {
+    min-height: 175px;
+    resize: vertical;
+  }
+
+  &__checkbox {
+    margin-bottom: 30px;
+  }
 
   &__btn {}
+}
+
+.stars {
+  .Starry .Starry-star {
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+  }
 }
 
 //.checkbox {
@@ -291,20 +421,54 @@
 //}
 
 .interest {
+  &__head {
+    display: flex;
+    align-items: start;
+    position: relative;
+  }
 
-  &__head {}
+  .slick-left {
+    position: absolute;
+    right: 20px;
+    top: -150%;
+    transform: translateY(0%);
 
-  &__title {}
+  }
+
+  .slick-right {
+    position: absolute;
+    right: 80px;
+    top: -150%;
+    transform: translateY(0%);
+    z-index: 99;
+  }
+
+  &__title {
+    font-size: size(36, 20);
+  }
 
   &__slider {}
 }
 
 .interest-slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: size(10, 5);
+  min-height: 300px;
 
-  &__item {}
+  &__item {
+
+    padding: 3px;
+  }
+
+  .product-card {
+    min-height: 300px;
+  }
 }
 
-//.product-card {
+
 
 //  &__link {}
 

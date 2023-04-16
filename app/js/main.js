@@ -1,5 +1,46 @@
 $(function () {
 
+
+
+
+
+  const tabsNav = document.querySelectorAll(".tabs-nav__link");
+  const tabsContent = document.querySelectorAll(".tabs-content__item");
+
+  tabsNav.forEach((navLink, index) => {
+    navLink.addEventListener("click", () => {
+      tabsNav.forEach((link) => {
+        link.classList.remove("active");
+      });
+
+      navLink.classList.add("active");
+
+      let navIndex = index;
+
+      tabsContent.forEach((item, index) => {
+        item.classList.remove("active");
+
+        if (index === navIndex) {
+          item.classList.add("active");
+        }
+      });
+    });
+  });
+
+
+
+  const rateStars = document.querySelector(".feedback-form__stars");
+  const rating = new Starry(rateStars, {
+    name: `rating`,
+    icons: {
+      blank: "../images/star-empty.svg",
+      hover: "../images/star-fill.svg",
+      active: "../images/star-fill.svg",
+    },
+  });
+
+
+
   const header = document.querySelector('header');
 
   window.onscroll = () => {
@@ -12,10 +53,18 @@ $(function () {
 
   $('.product-main__head-slider').slick({
     dots: false,
-    //dots: true,
 
     prevArrow: '<button type="button" class="product-main__btn--prev"><img src="images/icons/icon-left.svg" alt="arrow-left"></button>',
     nextArrow: '<button type="button" class="product-main__btn--next"><img src="images/icons/icon-right.svg" alt="arrow-right"></button>',
+  });
+
+  $(".product-slider__items").data - fancybox({
+    speed: 330, //скорость появления окна
+    addClass: 'product-lightbox',
+    loop: true, //галерея зациклена
+    infobar: true, // показать/скрыть кнопки след/пред слайд
+    buttons: true, // показать/скрыть справа вверху кнопки закрыть, список миниатюр, на весь экран
+    baseClass: 'retro2', // класс всплывайки
   });
 
   $('.review-slider__content').slick({
@@ -33,7 +82,68 @@ $(function () {
     ]
   });
 
+  $('.interest-slider').slick({
+    dots: false,
+    slidesToShow: 5,
+    nextArrow: '<button type="button" class="slick-left"><img src="images/next-arrow.png" alt="arrow-right"></button>',
+    prevArrow: '<button type="button" class="slick-right"><img src="images/prev-arrow.png" alt="arrow-left"></button>',
 
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          dots: true,
+          arrows: false,
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          dots: true,
+          arrows: false,
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 374,
+        settings: {
+          dots: true,
+          arrows: false,
+          slidesToShow: 1,
+        }
+      },
+    ]
+  });
+
+  const staticStars = document.querySelectorAll(".static-stars");
+
+  staticStars.forEach((starItem, index) => {
+    let stars = starItem.dataset.stars;
+
+    new Starry(starItem, {
+      name: `stars-${index}`,
+      readOnly: true,
+      beginWith: 20 * stars,
+      icons: {
+        blank: "../images/star-empty.svg",
+        hover: "../images/star-fill.svg",
+        active: "../images/star-fill.svg",
+      },
+    });
+  });
+
+  //const lightbox = document.querySelector('.product-main__head-slider')
+
+  //lightGallery(lightbox, {
+  //  plugins: [lgPager],
+  //  speed: 300,
+  //  addClass: 'product-lightbox',
+  //  counter: false,
+  //  download: false,
+  //  closeOnTap: false,
+  //  getCaptionFromTitleOrAlt: false
+  //});
 
   if (window.innerWidth <= 1200) {
     $('.restorant-card').slick({
@@ -93,9 +203,7 @@ $(function () {
       'min': 50,
       'max': 1200
     }
-
   });
-
 
 
   rangeSlider.noUiSlider.on('update', function (values, handle) {

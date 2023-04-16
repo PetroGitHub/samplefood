@@ -13,9 +13,12 @@
   <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
+  <link href="https://cdn.jsdelivr.net/gh/teddy95/starry@5/dist/starry.min.css" type="text/css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css"
     integrity="">
-  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -156,7 +159,7 @@
     <section class="product-main__head">
       <div class="product-main__info">
         <h1 class="title product-main__title">Чизбургер с листьями салата</h1>
-        <div class="stars product-main__stars"></div>
+        <div class="stars static-stars product-main__stars" data-stars="4"></div>
         <div class="product-main__price">160<span>грн.</span></div>
         <div class="product-main__actions">
           <div class="quantity product-main__quantity">
@@ -181,35 +184,46 @@
           <a href="#" class="more-link delivery__link">Подробнее</a>
         </div>
       </div>
-      <div class="product-main__head-slider">
-        <div class="product-slider__items">
-          <img src="images/big-burger.jpg" alt="Бургер" class="product-slider__img">
-        </div>
-        <div class="product-slider__items">
-          <img src="images/big-burger.jpg" alt="Бургер" class="product-slider__img">
-        </div>
-        <div class="product-slider__items">
-          <img src="images/big-burger.jpg" alt="Бургер" class="product-slider__img">
-        </div>
-      </div>
+      <ul class="product-main__head-slider">
+        <li class="product-slider__items">
+          <a data-fancybox="gallery" href="images/big-burger.jpg">
+            <img src="images/big-burger.jpg" alt="Бургер" class="product-slider__img" data-width="700"
+              data-height="700">
+          </a>
+        </li>
+        <li class="product-slider__items">
+          <a data-fancybox="gallery" href="images/big-burger.jpg">
+            <img src="images/big-burger.jpg" alt="Бургер" class="product-slider__img" data-width="700"
+              data-height="700">
+          </a>
+        </li>
+        <li class="product-slider__items">
+          <a data-fancybox="gallery" href="images/big-burger.jpg">
+            <img src="images/big-burger.jpg" alt="Бургер" class="product-slider__img" data-width="700"
+              data-height="700">
+          </a>
+        </li>
+      </ul>
     </section>
+  </div>
 
-    <section class="details">
+  <section class="details mb-120">
+    <div class="container">
       <h2 class="sr-only">Дополнительное описание</h2>
       <div class="tabs">
         <ul class="tab-nav">
           <li class="tabs-nav__item">
-            <a href="" class="tabs-nav__link">Описание</a>
+            <a href="#description" class="tabs-nav__link active">Описание</a>
           </li>
           <li class="tabs-nav__item">
-            <a href="" class="tabs-nav__link">Характеристики</a>
+            <a href="#characteristic" class="tabs-nav__link">Характеристики</a>
           </li>
           <li class="tabs-nav__item">
-            <a href="" class="tabs-nav__link">Отзывы <span>(2)</span></a>
+            <a href="#product-reviews" class="tabs-nav__link">Отзывы <span>(2)</span></a>
           </li>
         </ul>
         <ul class="tabs-content">
-          <li class="tabs-content__item">
+          <li class="tabs-content__item active">
             <div class="description">
               <p>Рубленый бифштекс из натуральной говядины на карамелизованной булочке, с ломтиком сыра «Чеддер»,
                 кетчупом, горчицей, луком и маринованными огурчиками.</p>
@@ -239,7 +253,7 @@
                         <div class="product-review__name">Андрей</div>
                         <time class="product-review__time" datetime="2021-06-10">10.06.2021</time>
                       </figcaption>
-                      <div class="stars product-review__stars"></div>
+                      <div class="stars static-stars product-review__stars" data-stars="5"></div>
                     </div>
                     <blockquote class="product-review__text">Доставили быстро. Товар свежий и очень вкусный, буду
                       пробовать еще!</blockquote>
@@ -254,7 +268,7 @@
                         <div class="product-review__name">Екатерина Белая</div>
                         <time class="product-review__time" datetime="2021-06-10">07.06.2021</time>
                       </figcaption>
-                      <div class="stars product-review__stars"></div>
+                      <div class="stars static-stars product-review__stars" data-stars="4"></div>
                     </div>
                     <blockquote class="product-review__text">этот бургер неплохой чтобы перекусить, когда нет
                       возможности или времени что-нибудь приготовить. Это отличный вариант, чтобы съесть на ходу, но
@@ -262,6 +276,7 @@
                   </figure>
                 </li>
               </ul>
+
             </div>
 
             <div class="product-feedback">
@@ -274,9 +289,9 @@
 
                 <div class="feedback-form__inner">
                   <div class="feedback-form__group">
-                    <label class="feedback-form__label" for="feedback[text]">Ваш отзыв</label>
+                    <label class="feedback-form__label" for="feedback[text]">Ваш отзыв *</label>
                     <textarea class="feedback-form__field feedback-form__field--text" name="feedback[text]"
-                      id="feedback[text]" placeholder="Введите текст отзыва" cols="30" rows="10" required></textarea>
+                      id="feedback[text]" placeholder="Введите текст отзыва" required></textarea>
                   </div>
                   <div class="feedback-form__group">
                     <label class="feedback-form__label" for="feedback[name]">Имя</label>
@@ -284,7 +299,7 @@
                       placeholder="Введите ваше имя">
                   </div>
                   <div class="feedback-form__group">
-                    <label class="feedback-form__label" for="feedback[email]">Email</label>
+                    <label class="feedback-form__label" for="feedback[email]">Email *</label>
                     <input class="feedback-form__field" type="email" name="feedback[email]" id="feedback[email]"
                       placeholder="youremail@mail.com" required>
                   </div>
@@ -302,9 +317,11 @@
           </li>
         </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="interest">
+  <section class="interest mb-120">
+    <div class="container">
       <div class="interest__head">
         <h2 class="title interest__title">Вас может заинтересовать</h2>
       </div>
@@ -428,12 +445,9 @@
           </article>
         </li>
       </ul>
+    </div>
+  </section>
 
-
-
-
-    </section>
-  </div>
 
 </main>
 
@@ -574,11 +588,18 @@
   </div>
 </footer>
 </div>
-<script src="js/slick.min.js"></script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
+
+<script src="js/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/teddy95/starry@5/dist/starry.min.js" type="text/javascript"
+  language="javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
 <script src="js/main.min.js"></script>
 <script src="js/main.js"></script>
+
 
 </body>
 

@@ -111,6 +111,20 @@
     }
   }
 
+  //.interest-slider {
+  //  padding: 0 100px;
+  //}
+
+  .interest {
+    &__head {
+      justify-content: center;
+    }
+  }
+
+  .interest-slider .product-card {
+    margin: 0 auto;
+  }
+
   .footer {
     &__content {
       flex-direction: column;
@@ -191,6 +205,7 @@
       margin: 0 auto;
     }
   }
+
 
   .footer {
     &__content {
@@ -300,8 +315,6 @@
 
   .categories-list {
     grid-template-columns: repeat(2, 1fr);
-
-
   }
 
   .footer {
@@ -406,4 +419,7 @@
     grid-template-columns: repeat(1, 1fr);
     //justify-items: center;
   }
+
+
+
 }
