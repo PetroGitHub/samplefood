@@ -23,6 +23,7 @@ function cleanDist() {
   return del('dist')
 }
 
+
 function images() {
   return src('app/images/**/*')
     .pipe(imagemin(
@@ -90,14 +91,28 @@ function styles() {
     .pipe(browserSync.stream())
 }
 
+//function build() {
+//  return src([
+//    'app/css/style.min.css',
+//    'app/fonts/**/*',
+//    'app/js/main.min.js',
+//    'app/*.html'
+//  ], { base: 'app' })
+//    .pipe(dest('dist'))
+//}
+
 function build() {
-  return src([
-    'app/css/style.min.css',
-    'app/fonts/**/*',
-    'app/js/main.min.js',
-    'app/*.html'
-  ], { base: 'app' })
-    .pipe(dest('dist'))
+  return src(
+    [
+      "app/*.html",
+      "app/favicons/**/*.*",
+      "app/fonts/**/*.*",
+      "app/css/*.css",
+      "app/js/*.js",
+      "app/images/**/*.*"
+    ],
+    { base: "app" }
+  ).pipe(dest("dist"))
 }
 
 function watching() {
