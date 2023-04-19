@@ -180,28 +180,6 @@ $(function () {
     },
   });
 
-  const quantityInput = document.querySelector(".quantity__input");
-  const incrementButton = document.querySelector(".quantity__btn--plus");
-  const decrementButton = document.querySelector(".quantity__btn--minus");
-
-  incrementButton.addEventListener("click", () => {
-    quantityInput.value = parseInt(quantityInput.value) + 1;
-  });
-
-  decrementButton.addEventListener("click", () => {
-    if (parseInt(quantityInput.value) > 0) {
-      quantityInput.value = parseInt(quantityInput.value) - 1;
-    }
-  });
-
-  quantityInput.addEventListener("input", () => {
-    const value = parseInt(quantityInput.value);
-    if (!isNaN(value) && value >= 0 && value <= 99) {
-      quantityInput.value = value;
-    } else {
-      quantityInput.value = 1;
-    }
-  });
 
 
 
@@ -233,7 +211,22 @@ $(function () {
     });
   });
 
-
+  $(document).ready(function () {
+    $('.quantity__btn--minus').click(function () {
+      var $input = $(this).parent().find('.quantity__input');
+      var count = parseInt($input.val()) - 1;
+      count = count < 1 ? 1 : count;
+      $input.val(count);
+      $input.change();
+      return false;
+    });
+    $('.quantity__btn--plus').click(function () {
+      var $input = $(this).parent().find('.quantity__input');
+      $input.val(parseInt($input.val()) + 1);
+      $input.change();
+      return false;
+    });
+  });
 
 
   const rangeSlider = document.querySelector('.range__slider');
@@ -269,6 +262,4 @@ $(function () {
   inputMax.addEventListener('change', function () {
     rangeSlider.noUiSlider.set([null, this.value]);
   });
-
-
 }); 
